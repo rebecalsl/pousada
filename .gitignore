@@ -1,0 +1,26 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Bancos de dados
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+
+# Backups
+*.bak
+*.backup
+*.sql.bak

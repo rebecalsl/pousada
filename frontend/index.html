@@ -1,0 +1,114 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Painel de gerenciamento para pousadas, quartos, reservas e hospedes.">
+    <meta name="theme-color" content="#315f72">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="src/styles.css">
+    <title>Pousada | Gerenciamento</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Sistema de gerenciamento</p>
+        <h1>Pousada</h1>
+      </div>
+      <div class="status-pill" id="connectionStatus">Online</div>
+    </header>
+
+    <nav class="tabs" aria-label="Areas do sistema">
+      <button class="tab active" type="button" data-view="dashboard">Dashboard</button>
+      <button class="tab" type="button" data-view="rooms">Quartos</button>
+      <button class="tab" type="button" data-view="bookings">Reservas</button>
+      <button class="tab" type="button" data-view="guests">Hospedes</button>
+    </nav>
+
+    <main>
+      <section class="view active" id="dashboard" aria-labelledby="dashboard-title">
+        <div class="section-heading">
+          <h2 id="dashboard-title">Resumo operacional</h2>
+          <p>Indicadores principais para acompanhar ocupacao, receita e proximas reservas.</p>
+        </div>
+        <div class="metrics-grid" id="metricsGrid"></div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Proximas reservas</h3>
+            <span>Atualizado localmente</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Hospede</th>
+                  <th>Quarto</th>
+                  <th>Check-in</th>
+                  <th>Check-out</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="upcomingBookings"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="rooms" aria-labelledby="rooms-title">
+        <div class="section-heading row-heading">
+          <div>
+            <h2 id="rooms-title">Quartos</h2>
+            <p>Disponibilidade, precos e capacidade por unidade.</p>
+          </div>
+          <button class="primary-action" type="button" id="newRoomButton">Novo quarto</button>
+        </div>
+        <div class="cards-grid" id="roomsGrid"></div>
+      </section>
+
+      <section class="view" id="bookings" aria-labelledby="bookings-title">
+        <div class="section-heading row-heading">
+          <div>
+            <h2 id="bookings-title">Reservas</h2>
+            <p>Controle de estadias confirmadas, pendentes e canceladas.</p>
+          </div>
+          <button class="primary-action" type="button" id="newBookingButton">Nova reserva</button>
+        </div>
+        <div class="table-wrap panel">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Hospede</th>
+                <th>Quarto</th>
+                <th>Periodo</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="bookingRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="view" id="guests" aria-labelledby="guests-title">
+        <div class="section-heading row-heading">
+          <div>
+            <h2 id="guests-title">Hospedes</h2>
+            <p>Cadastro basico de contatos e historico de reservas.</p>
+          </div>
+          <button class="primary-action" type="button" id="newGuestButton">Novo hospede</button>
+        </div>
+        <div class="cards-grid" id="guestsGrid"></div>
+      </section>
+    </main>
+
+    <dialog id="feedbackDialog">
+      <form method="dialog">
+        <h2 id="dialogTitle">Acao registrada</h2>
+        <p id="dialogMessage">Esta versao usa dados demonstrativos no navegador.</p>
+        <button class="primary-action" value="close">Ok</button>
+      </form>
+    </dialog>
+
+    <script src="src/app.js" defer></script>
+  </body>
+</html>

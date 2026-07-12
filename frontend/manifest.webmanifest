@@ -1,0 +1,10 @@
+﻿{
+  "name": "Pousada - Gerenciamento",
+  "short_name": "Pousada",
+  "description": "Painel de gerenciamento para quartos, reservas e hospedes.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f7f8",
+  "theme_color": "#315f72",
+  "icons": []
+}
